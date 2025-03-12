@@ -9,10 +9,11 @@ const newLineSchema = new mongoose.Schema(
     lineID: {
       type: Number,
       required: true,
+      unique: true, 
     },
-    stationID: {
+    stationIDCollection: {
       required: true,
-      type: Number,
+      type: [Number],
     }
   },
   { collection: "lines" }
