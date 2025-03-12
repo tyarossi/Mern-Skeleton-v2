@@ -15,7 +15,7 @@ const newTripSchema = new mongoose.Schema(
     direction: {
       required: true,
       type: Boolean,
-      label: direction ? "Inbound" : "Outbound",
+      label: direction ? "Inbound" : "Outbound", //inbound = true, outbound = false
     },
     headsign: {
       type: String,
@@ -25,7 +25,7 @@ const newTripSchema = new mongoose.Schema(
     Status: {
         type: Boolean,
         required: true,
-        label: Status ? "Running" : "Out of Service",
+        label: Status ? "Running" : "Out of Service", //running = true, out of service = false  
     },
     Routes: {
         type: String,
