@@ -1,13 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const Line = require('../models/lineModel');
+const axios = require('axios');
+
+const MBTA_API_BASE = "https://api-v3.mbta.com";
+const MBTA_API_KEY = process.env.MBTA_API_KEY; //store key in .env file
 
 // Create a new line
 router.post('/lines', async (req, res) => {
   try {
-    const newLine = new Line(req.body);
-    const savedLine = await newLine.save();
-    res.status(201).json(savedLine);
+    const response = await axios.post(`${MBTA_API_BASE}/lines`, req.body, {
+      headers: {
+        'x-api-key': MBTA_API_KEY,
+        'Content-Type': 'application/json'
+      }
+    });
+    res.status(201).json(response.data);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -16,8 +23,12 @@ router.post('/lines', async (req, res) => {
 // Read all lines
 router.get('/lines', async (req, res) => {
   try {
-    const lines = await Line.find();
-    res.status(200).json(lines);
+    const response = await axios.get(`${MBTA_API_BASE}/lines`, {
+      headers: {
+        'x-api-key': MBTA_API_KEY
+      }
+    });
+    res.status(200).json(response.data);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -26,11 +37,15 @@ router.get('/lines', async (req, res) => {
 // Read a single line by ID
 router.get('/lines/:id', async (req, res) => {
   try {
-    const line = await Line.findById(req.params.id);
-    if (!line) {
+    const response = await axios.get(`${MBTA_API_BASE}/lines/${req.params.id}`, {
+      headers: {
+        'x-api-key': MBTA_API_KEY
+      }
+    });
+    if (!response.data) {
       return res.status(404).json({ message: 'Line not found' });
     }
-    res.status(200).json(line);
+    res.status(200).json(response.data);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -39,11 +54,16 @@ router.get('/lines/:id', async (req, res) => {
 // Update a line by ID
 router.put('/lines/:id', async (req, res) => {
   try {
-    const updatedLine = await Line.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
-    if (!updatedLine) {
+    const response = await axios.put(`${MBTA_API_BASE}/lines/${req.params.id}`, req.body, {
+      headers: {
+        'x-api-key': MBTA_API_KEY,
+        'Content-Type': 'application/json'
+      }
+    });
+    if (!response.data) {
       return res.status(404).json({ message: 'Line not found' });
     }
-    res.status(200).json(updatedLine);
+    res.status(200).json(response.data);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
@@ -52,8 +72,12 @@ router.put('/lines/:id', async (req, res) => {
 // Delete a line by ID
 router.delete('/lines/:id', async (req, res) => {
   try {
-    const deletedLine = await Line.findByIdAndDelete(req.params.id);
-    if (!deletedLine) {
+    const response = await axios.delete(`${MBTA_API_BASE}/lines/${req.params.id}`, {
+      headers: {
+        'x-api-key': MBTA_API_KEY
+      }
+    });
+    if (!response.data) {
       return res.status(404).json({ message: 'Line not found' });
     }
     res.status(200).json({ message: 'Line deleted' });
