@@ -81,3 +81,149 @@ Content-Type: application/json
 
 ### Delete a stop
 DELETE http://localhost:3000/api/stations/{id}
+
+### User Routes
+
+# Login a user
+POST http://localhost:8081/user/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "testpassword"
+}
+
+# Register a new user
+POST http://localhost:8081/user/register
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "email": "newuser@example.com",
+  "password": "newpassword"
+}
+
+# Get all users
+GET http://localhost:8081/user
+
+# Get a user by ID
+GET http://localhost:8081/user/{678a9d1e116d86b9380b4693}
+
+# Edit a user
+PUT http://localhost:8081/user/{678a9d1e116d86b9380b4693}
+Content-Type: application/json
+
+{
+  "username": "updateduser",
+  "email": "updateduser@example.com"
+}
+
+# Delete a user
+DELETE http://localhost:8081/user/{678a9d1e116d86b9380b4693}
+
+### Station Routes
+
+# Get all stations
+GET http://localhost:8081/station
+
+# Get a station by ID
+GET http://localhost:8081/station/{1}
+
+# Sync stations
+POST http://localhost:8081/station/sync
+Content-Type: application/json
+
+{
+  "stations": [
+    { "stationId": 1, "name": "Station A" },
+    { "stationId": 2, "name": "Station B" }
+  ]
+}
+
+# Delete a station
+DELETE http://localhost:8081/station/{1}
+
+# Update a station
+PUT http://localhost:8081/station/{1}
+Content-Type: application/json
+
+{
+  "name": "Updated Station Name"
+}
+
+# Create a station
+POST http://localhost:8081/station
+Content-Type: application/json
+
+{
+  "stationId": 3,
+  "name": "New Station"
+}
+
+### Trip Routes
+
+# Create a new trip
+POST http://localhost:8081/trip
+Content-Type: application/json
+
+{
+  "tripID": 1,
+  "color": "Red",
+  "direction": true,
+  "headsign": "Downtown",
+  "Status": true,
+  "Routes": "Route A",
+  "Vehicle": "Bus 101"
+}
+
+# Get all trips
+GET http://localhost:8081/trip
+
+# Get a trip by ID
+GET http://localhost:8081/trip/{1}
+
+# Update a trip
+PUT http://localhost:8081/trip/{1}
+Content-Type: application/json
+
+{
+  "color": "Blue",
+  "direction": false,
+  "headsign": "Uptown",
+  "Status": false,
+  "Routes": "Route B",
+  "Vehicle": "Bus 202"
+}
+
+# Delete a trip
+DELETE http://localhost:8081/trip/{1}
+
+### Line Routes
+
+# Create a new line
+POST http://localhost:8081/line
+Content-Type: application/json
+
+{
+  "colorName": "Red",
+  "lineID": 1,
+  "stationIDCollection": [101, 102, 103]
+}
+
+# Get all lines
+GET http://localhost:8081/line
+
+# Get a line by ID
+GET http://localhost:8081/line/{1}
+
+# Update a line
+PUT http://localhost:8081/line/{1}
+Content-Type: application/json
+
+{
+  "colorName": "Blue",
+  "stationIDCollection": [201, 202, 203]
+}
+
+# Delete a line
+DELETE http://localhost:8081/line/{1}
