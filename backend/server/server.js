@@ -14,6 +14,17 @@ const syncStations = require('./routes/Stations')
 const deleteStations = require('./routes/Stations')
 const updateStation = require('./routes/Stations')
 const createStation = require('./routes/Stations')
+const createTrip = require('./routes/Trips').createTrip
+const getAllTrips = require('./routes/Trips').getAllTrips
+const getTripById = require('./routes/Trips').getTripById
+const updateTrip = require('./routes/Trips').updateTrip
+const deleteTrip = require('./routes/Trips').deleteTrip
+const createLine = require('./routes/Lines').createLine;
+const getAllLines = require('./routes/Lines').getAllLines;
+const getLineById = require('./routes/Lines').getLineById;
+const updateLine = require('./routes/Lines').updateLine;
+const deleteLine = require('./routes/Lines').deleteLine;
+
 
 
 require('dotenv').config();
@@ -34,6 +45,17 @@ app.use('/station', syncStations)
 app.use('/station', deleteStations)
 app.use('/station', updateStation)
 app.use('/station', createStation)
+app.use('/trip', createTrip)
+app.use('/trip', getAllTrips)
+app.use('/trip', getTripById)
+app.use('/trip', updateTrip)
+app.use('/trip', deleteTrip)
+app.use('/line', createLine)
+app.use('/line', getAllLines)
+app.use('/line', getLineById)
+app.use('/line', updateLine)
+app.use('/line', deleteLine)
+
 
 app.listen(SERVER_PORT, (req, res) => {
     console.log(`The backend service is running on port ${SERVER_PORT} and waiting for requests.`);
