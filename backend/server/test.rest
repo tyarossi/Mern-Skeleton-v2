@@ -1,4 +1,4 @@
-POST http://localhost:8080/user/signup
+POST http://localhost:8081/user/signup
 Content-Type: application/json 
 
 {
@@ -9,7 +9,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8080/user/login
+POST http://localhost:8081/user/login
 Content-Type: application/json 
 
 {
@@ -52,16 +52,16 @@ Content-Type: application/json
 POST  http://localhost:8081/user/deleteAll
 
 ### Get all stops
-GET http://localhost:3000/api/stations
+GET http://localhost:8081/api/stations
 
 ### Get stop by ID
-GET http://localhost:3000/api/stations/{id}
+GET http://localhost:8081/api/stations/{id}
 
 ### Sync stops from MBTA API
-GET http://localhost:3000/api/stations/sync/mbta
+GET http://localhost:8081/api/stations/sync/mbta
 
 ### Create a new stop
-POST http://localhost:3000/api/stations
+POST http://localhost:8081/api/stations
 Content-Type: application/json
 
 {
@@ -71,7 +71,7 @@ Content-Type: application/json
 }
 
 ### Update a stop
-PUT http://localhost:3000/api/stations/{id}
+PUT http://localhost:8081/api/stations/{id}
 Content-Type: application/json
 
 {
@@ -80,7 +80,7 @@ Content-Type: application/json
 }
 
 ### Delete a stop
-DELETE http://localhost:3000/api/stations/{id}
+DELETE http://localhost:8081/api/stations/{id}
 
 ### User Routes
 
