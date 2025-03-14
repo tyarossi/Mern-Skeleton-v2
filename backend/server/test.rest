@@ -1,4 +1,4 @@
-POST http://localhost:8096/user/signup
+POST http://localhost:8081/user/signup
 Content-Type: application/json 
 
 {
@@ -9,7 +9,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8096/user/login
+POST http://localhost:8081/user/login
 Content-Type: application/json 
 
 {
@@ -18,12 +18,12 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8096/user/getAll
+GET http://localhost:8081/user/getAll
 Content-Type: application/json
 
 ###
 
-POST http://localhost:8096/user/editUser
+POST http://localhost:8081/user/editUser
 Content-Type: application/json 
 
 {
@@ -33,7 +33,7 @@ Content-Type: application/json
 }
 
 ###
-GET  http://localhost:8096/user/getUserById
+GET  http://localhost:8081/user/getUserById
 Content-Type: application/json 
 
 {
@@ -41,7 +41,7 @@ Content-Type: application/json
 }
 
 ###
-GET  http://localhost:8096/user/getUserById
+GET  http://localhost:8081/user/getUserById
 Content-Type: application/json 
 
 {
@@ -49,19 +49,19 @@ Content-Type: application/json
 }
 
 ###
-POST  http://localhost:8096/user/deleteAll
+POST  http://localhost:8081/user/deleteAll
 
 ### Get all stops
-GET http://localhost:8096/api/stations
+GET http://localhost:8081/api/stations
 
 ### Get stop by ID
-GET http://localhost:8096/api/stations/{id}
+GET http://localhost:8081/api/stations/{id}
 
 ### Sync stops from MBTA API
-GET http://localhost:8096/api/stations/sync/mbta
+GET http://localhost:8081/api/stations/sync/mbta
 
 ### Create a new stop
-POST http://localhost:8096/api/stations
+POST http://localhost:8081/api/stations
 Content-Type: application/json
 
 {
@@ -71,7 +71,7 @@ Content-Type: application/json
 }
 
 ### Update a stop
-PUT http://localhost:8096/api/stations/{id}
+PUT http://localhost:8081/api/stations/{id}
 Content-Type: application/json
 
 {
@@ -80,12 +80,12 @@ Content-Type: application/json
 }
 
 ### Delete a stop
-DELETE http://localhost:8096/api/stations/{id}
+DELETE http://localhost:8081/api/stations/{id}
 
 ### User Routes
 
 # Login a user
-POST http://localhost:8096/user/login
+POST http://localhost:8081/user/login
 Content-Type: application/json
 
 {
@@ -94,7 +94,7 @@ Content-Type: application/json
 }
 
 # Register a new user
-POST http://localhost:8096/user/register
+POST http://localhost:8081/user/register
 Content-Type: application/json
 
 {
@@ -104,13 +104,13 @@ Content-Type: application/json
 }
 
 # Get all users
-GET http://localhost:8096/user
+GET http://localhost:8081/user
 
 # Get a user by ID
-GET http://localhost:8096/user/{0}
+GET http://localhost:8081/user/{0}
 
 # Edit a user
-PUT http://localhost:8096/user/{0}
+PUT http://localhost:8081/user/{0}
 Content-Type: application/json
 
 {
@@ -119,18 +119,18 @@ Content-Type: application/json
 }
 
 # Delete a user
-DELETE http://localhost:8096/user/{0}
+DELETE http://localhost:8081/user/{0}
 
 ### Station Routes
 
 # Get all stations
-GET http://localhost:8096/station
+GET http://localhost:8081/station
 
 # Get a station by ID
-GET http://localhost:8096/station/{1}
+GET http://localhost:8081/station/{1}
 
 # Sync stations
-POST http://localhost:8096/station/sync
+POST http://localhost:8081/station/sync
 Content-Type: application/json
 
 {
@@ -141,10 +141,10 @@ Content-Type: application/json
 }
 
 # Delete a station
-DELETE http://localhost:8096/station/{1}
+DELETE http://localhost:8081/station/{1}
 
 # Update a station
-PUT http://localhost:8096/station/{1}
+PUT http://localhost:8081/station/{1}
 Content-Type: application/json
 
 {
@@ -152,7 +152,7 @@ Content-Type: application/json
 }
 
 # Create a station
-POST http://localhost:8096/station
+POST http://localhost:8081/station
 Content-Type: application/json
 
 {
@@ -163,7 +163,7 @@ Content-Type: application/json
 ### Trip Routes
 
 # Create a new trip
-POST http://localhost:8096/trip
+POST http://localhost:8081/trip
 Content-Type: application/json
 
 {
@@ -177,13 +177,13 @@ Content-Type: application/json
 }
 
 # Get all trips
-GET http://localhost:8096/trip
+GET http://localhost:8081/trip
 
 # Get a trip by ID
-GET http://localhost:8096/trip/{1}
+GET http://localhost:8081/trip/{1}
 
 # Update a trip
-PUT http://localhost:8096/trip/{1}
+PUT http://localhost:8081/trip/{1}
 Content-Type: application/json
 
 {
@@ -196,12 +196,12 @@ Content-Type: application/json
 }
 
 # Delete a trip
-DELETE http://localhost:8096/trip/{1}
+DELETE http://localhost:8081/trip/{1}
 
 ### Line Routes
 
 # Create a new line
-POST http://localhost:8096/line
+POST http://localhost:8081/line
 Content-Type: application/json
 
 {
@@ -211,13 +211,13 @@ Content-Type: application/json
 }
 
 # Get all lines
-GET http://localhost:8096/line
+GET http://localhost:8081/line
 
 # Get a line by ID
-GET http://localhost:8096/line/{1}
+GET http://localhost:8081/line/{1}
 
 # Update a line
-PUT http://localhost:8096/line/{1}
+PUT http://localhost:8081/line/{1}
 Content-Type: application/json
 
 {
@@ -226,4 +226,4 @@ Content-Type: application/json
 }
 
 # Delete a line
-DELETE http://localhost:8096/line/{1}
+DELETE http://localhost:8081/line/{1}
