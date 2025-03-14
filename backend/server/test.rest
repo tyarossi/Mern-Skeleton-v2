@@ -50,3 +50,34 @@ Content-Type: application/json
 
 ###
 POST  http://localhost:8081/user/deleteAll
+
+### Get all stops
+GET http://localhost:3000/api/stations
+
+### Get stop by ID
+GET http://localhost:3000/api/stations/{id}
+
+### Sync stops from MBTA API
+GET http://localhost:3000/api/stations/sync/mbta
+
+### Create a new stop
+POST http://localhost:3000/api/stations
+Content-Type: application/json
+
+{
+  "mbtaId": "test-mbta-id",
+  "color": "red",
+  "address": "123 Test St"
+}
+
+### Update a stop
+PUT http://localhost:3000/api/stations/{id}
+Content-Type: application/json
+
+{
+  "color": "blue",
+  "address": "456 Updated St"
+}
+
+### Delete a stop
+DELETE http://localhost:3000/api/stations/{id}
