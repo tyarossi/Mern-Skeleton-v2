@@ -20,4 +20,4 @@ const StopSchema = new mongoose.Schema({
   }]
 });
 
-module.exports = mongoose.model("Stop", StopSchema);
+module.exports = mongoose.model("Stops", StopSchema);

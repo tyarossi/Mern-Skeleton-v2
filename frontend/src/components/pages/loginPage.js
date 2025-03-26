@@ -46,7 +46,7 @@ const Login = () => {
       setBgColor(SECONDARY_COLOR);
       setBgText('Light mode')
     }
-  }, [light]);
+  }, [light, user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

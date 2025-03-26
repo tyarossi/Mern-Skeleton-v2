@@ -19,4 +19,4 @@ const newLineSchema = new mongoose.Schema(
   { collection: "lines" }
 );
 
-module.exports = mongoose.model('line', newLineSchema)
+module.exports = mongoose.model('lines', newLineSchema)
